@@ -104,7 +104,7 @@ export const actualizarPorciones = (id, nuevaCantidad) => {
     if (!item) throw new HttpError(404, "El plato no esta en tu reserva");
 
     const plato = buscarPlato(id);
-    const diferencia = nuevaCantidad - item.cantidad; 
+    const diferencia = nuevaCantidad - item.cantidad;
 
     if (diferencia > 0) {
         if (plato.stock < diferencia) throw new HttpError(400, "Stock insuficiente");
@@ -123,7 +123,7 @@ export const eliminarPlato = (id) => {
     const item = itemsReservados.find((i) => i.id === Number(id));
     if (!item) throw new HttpError(404, "El plato no esta en tu reserva");
 
-    buscarPlato(id).stock += item.cantidad; 
+    buscarPlato(id).stock += item.cantidad;
     itemsReservados = itemsReservados.filter((i) => i.id !== item.id);
     if (itemsReservados.length === 0) expiraEn = null;
 
