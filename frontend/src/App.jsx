@@ -1,7 +1,11 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import PanelSuperior from './PanelSuperior';
-import CarritoReserva from './CarritoReserva';
+import PanelSuperior from './pages/PanelSuperior';
+import CarritoReserva from './pages/CarritoReserva';
+
+// Importar el componente del juego Adivina el Número
+import GuessGame from './GuessGame';
 
 const API_URL = 'http://localhost:3005/api';
 
@@ -15,7 +19,7 @@ const Dashboard = () => {
 
   //consumir get/api/reserva
   const cargarReserva = async () => {
-    try { 
+    try {
       const res = await axios.get(`${API_URL}/reserva`);
       setReserva(res.data);
     } catch (err) {
@@ -31,7 +35,7 @@ const Dashboard = () => {
   const actualizarPorciones = async (id, nuevaCantidad) => {
     try {
       setErrorGlobal(null);
-      const res = await axios.put(`${API_URL}/reserva/actualizar-porciones/${id}`, {cantidad: nuevaCantidad});
+      const res = await axios.put(`${API_URL}/reserva/actualizar-porciones/${id}`, { cantidad: nuevaCantidad });
       setReserva(res.data);
     } catch (err) {
       setErrorGlobal(err.response?.data?.error || "Error al actualizaar");
@@ -50,29 +54,34 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="container-fluid p-0">
-      <PanelSuperior 
-        saldo={reserva.saldo} 
-        totalReserva={reserva.total}
-        error={errorGlobal} 
-      />
-      
-      <div className="container mt-4">
-        <div className="row">
-          <div className="col-md-8">
-             {/*tu parte del catalogo diana*/}
-          </div>
-          <div className="col-md-4">
-            <CarritoReserva 
-              items={reserva.itemsReservados} 
-              actualizarPorciones={actualizarPorciones}
-              eliminarItem={eliminarItem}
-            />
+    <>
+    {/* Mostrar el juego Adivina el Número */}
+      <GuessGame />
+
+      <div className="container-fluid p-0">
+        <PanelSuperior
+          saldo={reserva.saldo}
+          totalReserva={reserva.total}
+          error={errorGlobal}
+        />
+
+        <div className="container mt-4">
+          <div className="row">
+            <div className="col-md-8">
+              {/*tu parte del catalogo diana*/}
+            </div>
+            <div className="col-md-4">
+              <CarritoReserva
+                items={reserva.itemsReservados}
+                actualizarPorciones={actualizarPorciones}
+                eliminarItem={eliminarItem}
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default App;
+export default Dashboard;

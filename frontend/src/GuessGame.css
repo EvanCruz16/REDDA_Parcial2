@@ -1,0 +1,233 @@
+
+.juego-fondo {
+  min-height: 100vh;
+  padding: 40px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f2f4f8;
+  font-family: Arial, sans-serif;
+}
+
+.juego-tarjeta {
+  width: 100%;
+  max-width: 560px;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(25, 35, 55, 0.10);
+}
+
+.juego-encabezado {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.juego-etiqueta {
+  color: #5268d9;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.juego-encabezado h1 {
+  margin: 12px 0;
+  color: #202943;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.juego-encabezado p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.juego-estadisticas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.estadistica {
+  padding: 16px;
+  text-align: center;
+  background: #f3f5ff;
+  border-radius: 12px;
+}
+
+.estadistica span,
+.estadistica strong {
+  display: block;
+}
+
+.estadistica span {
+  color: #666e80;
+  font-size: 13px;
+}
+
+.estadistica strong {
+  margin-top: 8px;
+  color: #4055c8;
+  font-size: 28px;
+}
+
+.juego-mensaje {
+  margin-bottom: 18px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #eef2ff;
+  color: #3446a5;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.juego-mensaje.mensaje-exito {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.juego-error {
+  margin-bottom: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 14px;
+}
+
+.juego-tarjeta form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #293248;
+  font-weight: 700;
+}
+
+.juego-tarjeta form input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d5d9e3;
+  border-radius: 9px;
+  outline: none;
+  font-size: 16px;
+}
+
+.juego-tarjeta form input:focus {
+  border-color: #5268d9;
+  box-shadow: 0 0 0 3px rgba(82, 104, 217, 0.13);
+}
+
+.boton-adivinar,
+.boton-reiniciar {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 9px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.boton-adivinar {
+  margin-top: 14px;
+  background: #5268d9;
+  color: white;
+}
+
+.boton-adivinar:hover:not(:disabled) {
+  background: #3f51b5;
+}
+
+.boton-reiniciar {
+  margin-top: 12px;
+  background: #e9ebf2;
+  color: #30384b;
+}
+
+.boton-reiniciar:hover:not(:disabled) {
+  background: #d9dce7;
+}
+
+.boton-adivinar:disabled,
+.boton-reiniciar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.juego-victoria {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 9px;
+  background: #dcfce7;
+  color: #166534;
+  text-align: center;
+  font-weight: 700;
+}
+
+.historial {
+  margin-top: 28px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 22px;
+}
+
+.historial h2 {
+  margin-bottom: 16px;
+  color: #202943;
+  font-size: 19px;
+}
+
+.historial-vacio {
+  color: #7a8190;
+  font-size: 14px;
+}
+
+.historial ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.historial li {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 13px;
+  border-radius: 9px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.intento-fallido {
+  background: #f4f5f8;
+  color: #41485a;
+}
+
+.intento-correcto {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.historial li strong {
+  font-size: 13px;
+}
+
+.juego-pie {
+  margin: 24px 0 0;
+  color: #8a90a0;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .juego-tarjeta {
+    padding: 22px 18px;
+  }
+
+  .juego-encabezado h1 {
+    font-size: 27px;
+  }
+}
