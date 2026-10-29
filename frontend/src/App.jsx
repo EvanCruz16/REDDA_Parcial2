@@ -43,7 +43,7 @@ const Dashboard = () => {
   const eliminarItem = async (id) => {
     try {
       setErrorGlobal(null);
-      const res = await axios.delete('${API_URL}/reserva/eliminar/${id}');
+      const res = await axios.delete(`${API_URL}/reserva/eliminar/${id}`);
       setReserva(res.data);
     } catch (err) {
       setErrorGlobal(err.response?.data?.error || "Error eliminando");
