@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import PanelSuperior from './PanelSuperior';
-import CarritoReserva from './CarritoReserva';
+import PanelSuperior from './pages/PanelSuperior';
+import CarritoReserva from './pages/CarritoReserva';
 import CatalogoMenu from './pages/CatalogoMenu';
 
 const API_URL = 'http://localhost:3005/api';
