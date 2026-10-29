@@ -70,7 +70,6 @@ const CatalogoMenu = ({ actualizarReservaGlobal, setErrorGlobal}) => {
                   ) : (
                     <Button 
                       color="primary" 
-                      size="sm" 
                       onClick={() => agregarAReserva(plato.id)}
                     >
                       Añadir a la Reserva
