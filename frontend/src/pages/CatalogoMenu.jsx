@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import {Row, Col, Card, CardBody, CardTitle, CardText, Badge, Button } from 'reactstrap'; 
 import axios from 'axios'; 
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3005/api';
+
 const CatalogoMenu = ({ actualizarReservaGlobal, setErrorGlobal}) => {
     const [menu, setMenu] = useState([]); //crea una variable para que see actualice con las diferentes comidas.
     const cargarMenu = async() => {
