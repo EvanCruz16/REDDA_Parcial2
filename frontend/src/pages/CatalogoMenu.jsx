@@ -74,7 +74,7 @@ const CatalogoMenu = ({ actualizarReservaGlobal, setErrorGlobal }) => {
                                             className="px-2 py-1 text-nowrap"
                                             onClick={() => agregarAReserva(plato.id)}
                                         >
-                                            Añadir a la Reserva
+                                            Añadir
                                         </Button>
                                     )}
                                 </div>
