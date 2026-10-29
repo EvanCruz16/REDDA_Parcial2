@@ -80,4 +80,4 @@ const Dashboard = () => {
   );
 };
 
-export default App;
+export default Dashboard;
