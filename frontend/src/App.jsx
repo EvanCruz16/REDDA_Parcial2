@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PanelSuperior from './PanelSuperior';
 import CarritoReserva from './CarritoReserva';
+import CatalogoMenu from './pages/CatalogoMenu';
 
 const API_URL = 'http://localhost:3005/api';
 
@@ -60,7 +61,11 @@ const Dashboard = () => {
       <div className="container mt-4">
         <div className="row">
           <div className="col-md-8">
-             {/*tu parte del catalogo diana*/}
+             {/*para mostrar el menu*/}
+             <CatalogoMenu 
+             actualizarReservaGlobal={setReserva}
+             setErrorGlobal={setErrorGlobal}
+             />
           </div>
           <div className="col-md-4">
             <CarritoReserva 
